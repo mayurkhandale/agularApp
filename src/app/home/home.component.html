@@ -1,0 +1,25 @@
+<p>home works!</p>
+<h1>Table Data from service file</h1>
+<h1 class="error" *ngIf="error "> {{error}}</h1>
+<h1 class="loading" *ngIf="loader"> Loading.........</h1>
+<table *ngIf="data.length>0 && !loader" border="1">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let items of data">
+            <td>{{items.id}}</td>
+            <td>{{items.name}}</td>
+            <td>{{items.username}}</td>
+            <td>{{items.email}}</td>
+            <td><button (click)="deleteRow(items)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
